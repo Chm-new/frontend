@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
-import './Navbar.css';
+import './Navber.css'; 
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -24,15 +24,16 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="login-button">
-        <FontAwesomeIcon icon={faUser} />
-        <div>로그인</div>
-      </div>
-      <div className="nav-section">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi_JMPBd5OhJOs07PIM0wfX5yhtTU38gjfUQ&s" alt="로고" />
-      </div>
+     
       <div className="menu-area">
+
+      <div className="nav-section">
+      </div>
         <ul className="menu-list">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi_JMPBd5OhJOs07PIM0wfX5yhtTU38gjfUQ&s" alt="로고" />
+          
+          
+
           {menuList.map((menu, index) => (
             <li
               key={menu.title}
@@ -52,11 +53,21 @@ const Navbar = () => {
               )}
             </li>
           ))}
+          <div className='right-menu'>
+
+            <div className="search">
+              <FontAwesomeIcon icon={faSearch} />
+              <input className='search-input' type="text" placeholder="검색" />
+            </div>
+
+            <div className="login-button">
+              <FontAwesomeIcon icon={faUser} /> 로그인
+            </div> 
+            
+          </div>
+
         </ul>
-        <div>
-          <FontAwesomeIcon className="search" icon={faSearch} />
-          <input type="text" placeholder="검색" />
-        </div>
+       
       </div>
     </div>
   );
